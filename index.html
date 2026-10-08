@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orelle | Luxury Fragrances</title>
+  <meta name="description" content="Discover Orelle's luxurious collection of dark, refined fragrances, crafted with the world's most exquisite ingredients.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Orelle",
+        "url": "https://example.com",
+        "logo": "https://example.com/logo.png"
+      },
+      {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://example.com/fragrance-detail.html?id=f1"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://example.com/fragrance-detail.html?id=f2"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body class="home">
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Orelle</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link active">Home</a></div>
+        <div class="nav-item">
+          <a href="shop.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html?category=women" class="dropdown-item">Women</a>
+            <a href="shop.html?category=men" class="dropdown-item">Men</a>
+            <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+            <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+        <div class="nav-item">
+          <a href="studio.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Studio</a>
+          <div class="dropdown-menu">
+            <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+            <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#story" class="dropdown-item">Our Story</a>
+            <a href="about.html#contact" class="dropdown-item">Contact</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="cart-toggle" aria-label="Cart drawer">
+          <i class="ph ph-bag"></i>
+          <div class="cart-count" style="display:none;">0</div>
+        </a>
+        <a href="login.html" class="btn btn-primary login-btn" style="height: 36px; padding: 0 16px;">Login</a>
+        <button class="hamburger" aria-label="Open mobile menu"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="padding: var(--space-4); text-align: right; border-bottom: 1px solid var(--border-color);">
+      <button class="hamburger" aria-label="Close mobile menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link active">Home</a></div>
+      <div class="nav-item">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="shop.html?category=women" class="dropdown-item">Women</a>
+          <a href="shop.html?category=men" class="dropdown-item">Men</a>
+          <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+          <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+      <div class="nav-item">
+        <a href="studio.html" class="nav-link">Studio</a>
+        <div class="dropdown-menu">
+          <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+          <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html#story" class="dropdown-item">Our Story</a>
+          <a href="about.html#contact" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      <div class="nav-item" style="margin-top: var(--space-6); padding: 0 var(--space-4);">
+        <a href="login.html" class="btn btn-primary login-btn" style="width: 100%;">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart" aria-label="Close cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body">
+      <!-- Injected by cart.js -->
+    </div>
+    <div class="cart-footer">
+      <!-- Injected by cart.js -->
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero -->
+    <section class="h-hero" id="hero">
+      <div class="h-hero-media">
+        <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=2000" alt="Dark textured bottle on a minimalist background" fetchpriority="high">
+      </div>
+      <div class="h-hero-glow"></div>
+      <div class="h-scroll-cue" aria-hidden="true">Scroll</div>
+
+      <div class="container">
+        <span class="eyebrow animate-fade-in">Maison de Parfum &middot; Collection N&deg;7</span>
+        <h1 class="h-hero-title">
+          <span class="line"><span style="--d: .15s">The Architecture</span></span>
+          <span class="line"><span style="--d: .3s">of <em>Scent.</em></span></span>
+        </h1>
+        <div class="h-hero-row">
+          <div class="animate-slide-up delay-300">
+            <p class="h-hero-lead">A dark, refined collection of structural fragrances &mdash; composed in small batches for those who command the room.</p>
+            <div class="h-hero-ctas">
+              <a href="shop.html" class="btn btn-primary">Explore Collection <i class="ph ph-arrow-right"></i></a>
+              <a href="#atlas" class="btn btn-secondary">Find Your Signature</a>
+            </div>
+          </div>
+          <div class="h-hero-meta animate-fade-in delay-300">
+            <div><strong>06</strong><span>Signature works</span></div>
+            <div><strong>98%</strong><span>Natural extracts</span></div>
+            <div><strong>12h</strong><span>Lasting trail</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Notes marquee -->
+    <div class="h-marquee" aria-hidden="true">
+      <div class="h-marquee-track">
+        <span>Smoked Oud</span><span>Calabrian Bergamot</span><span>Damask Rose</span><span>Mysore Sandalwood</span><span>Orris Butter</span><span>Labdanum</span><span>Black Vanilla</span><span>Oakmoss</span>
+        <span>Smoked Oud</span><span>Calabrian Bergamot</span><span>Damask Rose</span><span>Mysore Sandalwood</span><span>Orris Butter</span><span>Labdanum</span><span>Black Vanilla</span><span>Oakmoss</span>
+      </div>
+    </div>
+
+    <!-- Featured Collection -->
+    <section class="section">
+      <div class="container">
+        <div class="h-split-head">
+          <div class="reveal">
+            <span class="eyebrow">Featured Works</span>
+            <h2>Our most celebrated <em>compositions.</em></h2>
+          </div>
+          <div class="reveal" style="--d: .15s">
+            <p style="margin-bottom: var(--space-6);">Each work is aged for twelve weeks before bottling, letting the accord settle into its final, quiet shape.</p>
+            <a href="shop.html" class="link-arrow">View full catalog <i class="ph ph-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="h-products cards-3">
+          <article class="h-product reveal">
+            <a href="fragrance-detail.html?id=f1" class="h-product-media">
+              <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f?auto=format&fit=crop&q=80&w=800" alt="Obsidian Rose" loading="lazy">
+              <span class="h-product-index">N&deg; 01</span>
+              <span class="h-product-notes"><b>Notes</b>Pink pepper &middot; Rose &middot; Smoked oud</span>
+            </a>
+            <div class="h-product-info">
+              <div>
+                <h3>Obsidian Rose</h3>
+                <div class="meta">Eau de Parfum &middot; Floral</div>
+              </div>
+              <div class="price tabular">$245</div>
+            </div>
+          </article>
+          <article class="h-product reveal" style="--d: .12s">
+            <a href="fragrance-detail.html?id=f2" class="h-product-media">
+              <img src="https://images.unsplash.com/photo-1587017539504-67cfbddac569?auto=format&fit=crop&q=80&w=800" alt="Velvet Santal" loading="lazy">
+              <span class="h-product-index">N&deg; 02</span>
+              <span class="h-product-notes"><b>Notes</b>Cardamom &middot; Sandalwood &middot; Amber</span>
+            </a>
+            <div class="h-product-info">
+              <div>
+                <h3>Velvet Santal</h3>
+                <div class="meta">Extrait de Parfum &middot; Woody</div>
+              </div>
+              <div class="price tabular">$320</div>
+            </div>
+          </article>
+          <article class="h-product reveal" style="--d: .24s">
+            <a href="fragrance-detail.html?id=f4" class="h-product-media">
+              <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?auto=format&fit=crop&q=80&w=800" alt="Midnight Chypre" loading="lazy">
+              <span class="h-product-index">N&deg; 04</span>
+              <span class="h-product-notes"><b>Notes</b>Blackcurrant &middot; Patchouli &middot; Oakmoss</span>
+            </a>
+            <div class="h-product-info">
+              <div>
+                <h3>Midnight Chypre</h3>
+                <div class="meta">Eau de Parfum &middot; Chypre</div>
+              </div>
+              <div class="price tabular">$260</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive: The Scent Atlas -->
+    <section class="section atlas" id="atlas" aria-labelledby="atlas-title">
+      <div class="container">
+        <div class="atlas-head reveal">
+          <span class="eyebrow">Interactive &middot; The Scent Atlas</span>
+          <h2 id="atlas-title">Drag to discover your <em>signature.</em></h2>
+          <p>Move the orb across our olfactory map &mdash; from fresh to warm, airy to intense &mdash; and watch your match reveal itself in real time.</p>
+        </div>
+
+        <div class="atlas-grid">
+          <div class="atlas-stage reveal">
+            <div class="atlas-map" id="atlasMap">
+              <div class="atlas-ring" style="width: 34%; aspect-ratio: 1;"></div>
+              <div class="atlas-ring" style="width: 64%; aspect-ratio: 1;"></div>
+              <div class="atlas-ring" style="width: 94%; aspect-ratio: 1;"></div>
+              <div class="atlas-axis-line h"></div>
+              <div class="atlas-axis-line v"></div>
+              <div class="atlas-cross h"></div>
+              <div class="atlas-cross v"></div>
+              <span class="atlas-label top">Intense</span>
+              <span class="atlas-label bottom">Airy</span>
+              <span class="atlas-label left">Fresh</span>
+              <span class="atlas-label right">Warm</span>
+              <!-- Fragrance dots injected by atlas.js -->
+              <button class="atlas-orb" id="atlasOrb" type="button"
+                aria-label="Scent selector. Use arrow keys to move: left and right for fresh to warm, up and down for intensity."></button>
+              <span class="atlas-hint"><i class="ph ph-hand-pointing"></i> Drag the orb</span>
+            </div>
+            <div class="atlas-moods" role="group" aria-label="Mood presets">
+              <button class="atlas-mood" type="button" data-x="0.14" data-y="0.18"><i class="ph ph-sun-horizon"></i> Morning light</button>
+              <button class="atlas-mood" type="button" data-x="0.66" data-y="0.36"><i class="ph ph-coffee"></i> Golden hour</button>
+              <button class="atlas-mood" type="button" data-x="0.34" data-y="0.74"><i class="ph ph-moon-stars"></i> After midnight</button>
+              <button class="atlas-mood" type="button" data-x="0.86" data-y="0.88"><i class="ph ph-fire"></i> Velvet winter</button>
+            </div>
+          </div>
+
+          <aside class="atlas-panel reveal" style="--d: .15s" aria-live="polite">
+            <div class="atlas-panel-top">
+              <div class="atlas-thumb"><img id="atlasImg" src="" alt=""></div>
+              <div>
+                <div class="atlas-meta" id="atlasFamily"></div>
+                <h3 class="atlas-name" id="atlasName"></h3>
+                <div class="atlas-meta" id="atlasConc"></div>
+              </div>
+              <div class="atlas-affinity" aria-label="Affinity score">
+                <svg viewBox="0 0 84 84" aria-hidden="true">
+                  <circle class="track" cx="42" cy="42" r="38"></circle>
+                  <circle class="bar" id="atlasRing" cx="42" cy="42" r="38" stroke-dasharray="238.76" stroke-dashoffset="238.76"></circle>
+                </svg>
+                <div class="atlas-affinity-val"><span id="atlasScore">0</span><small>Match</small></div>
+              </div>
+            </div>
+
+            <p class="atlas-desc" id="atlasDesc"></p>
+
+            <div class="atlas-pyramid">
+              <div class="atlas-tier"><span>Top</span><div id="atlasTop"></div></div>
+              <div class="atlas-tier"><span>Heart</span><div id="atlasHeart"></div></div>
+              <div class="atlas-tier"><span>Base</span><div id="atlasBase"></div></div>
+            </div>
+
+            <div class="atlas-meters">
+              <div class="atlas-meter">
+                <div class="atlas-meter-label"><span>Longevity</span><span id="atlasLongVal" class="tabular"></span></div>
+                <div class="atlas-meter-bar"><span id="atlasLong"></span></div>
+              </div>
+              <div class="atlas-meter">
+                <div class="atlas-meter-label"><span>Sillage</span><span id="atlasSilVal" class="tabular"></span></div>
+                <div class="atlas-meter-bar"><span id="atlasSil"></span></div>
+              </div>
+            </div>
+
+            <div class="atlas-actions">
+              <div class="atlas-price"><small>From &middot; 50ml</small><span id="atlasPrice" class="tabular"></span></div>
+              <a href="#" class="btn btn-secondary" id="atlasView">Discover</a>
+              <button type="button" class="btn btn-primary" id="atlasAdd"><i class="ph ph-bag"></i> Add to bag</button>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="section">
+      <div class="container h-story">
+        <div class="h-story-media reveal">
+          <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&q=80&w=900" alt="Perfume ingredients abstract" loading="lazy">
+          <div class="h-story-badge" aria-hidden="true">
+            <svg viewBox="0 0 120 120">
+              <defs><path id="badgeCircle" d="M60,60 m-48,0 a48,48 0 1,1 96,0 a48,48 0 1,1 -96,0"></path></defs>
+              <text><textPath href="#badgeCircle">Hand composed &middot; Small batch &middot; Aged 12 weeks &middot;</textPath></text>
+            </svg>
+            <i class="ph ph-drop"></i>
+          </div>
+        </div>
+        <div class="reveal" style="--d: .15s">
+          <span class="eyebrow">The Maison</span>
+          <blockquote>&ldquo;We build fragrance the way an architect builds space &mdash; with <em class="text-accent">structure, shadow</em> and restraint.&rdquo;</blockquote>
+          <p>Every Orelle composition begins with a single raw material and is built outward, note by note, until nothing can be removed. The result is scent with a clear silhouette: quiet at first, unforgettable by evening.</p>
+          <div class="h-stats">
+            <div><strong data-count="140">0</strong><span>Raw materials</span></div>
+            <div><strong data-count="12">0</strong><span>Weeks maceration</span></div>
+            <div><strong data-count="3">0</strong><span>Master perfumers</span></div>
+          </div>
+          <a href="about.html" class="link-arrow">Our story <i class="ph ph-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="h-split-head">
+          <div class="reveal">
+            <span class="eyebrow">The Studio</span>
+            <h2>Made <em>personal.</em></h2>
+          </div>
+          <p class="reveal" style="--d: .15s">Sample before you commit, or turn a bottle into a keepsake with bespoke presentation.</p>
+        </div>
+        <div class="h-duo">
+          <a href="studio.html#discovery" class="h-tile reveal">
+            <img src="https://images.unsplash.com/photo-1610461888750-10bfc601b874?auto=format&fit=crop&q=80&w=1000" alt="Discovery Sets" loading="lazy">
+            <div class="h-tile-body">
+              <div>
+                <span class="eyebrow">Discovery</span>
+                <h3>Discovery Sets</h3>
+                <p>Curate your own collection of samples. The cost is credited toward a full-size purchase.</p>
+              </div>
+              <span class="h-tile-arrow"><i class="ph ph-arrow-right"></i></span>
+            </div>
+          </a>
+          <a href="studio.html#packaging" class="h-tile reveal" style="--d: .12s">
+            <img src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?auto=format&fit=crop&q=80&w=1000" alt="Custom Packaging" loading="lazy">
+            <div class="h-tile-body">
+              <div>
+                <span class="eyebrow">Gifting</span>
+                <h3>The Art of Gifting</h3>
+                <p>Customize your presentation box, ribbon, and add a personalized engraving.</p>
+              </div>
+              <span class="h-tile-arrow"><i class="ph ph-arrow-right"></i></span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIP -->
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="h-vip reveal">
+          <span class="eyebrow">Orelle VIP Rewards</span>
+          <h2>An inner circle, <em>by invitation of taste.</em></h2>
+          <p>Earn points on every purchase and unlock private events, complimentary engraving, and early access to new releases.</p>
+          <div class="h-tiers cards-3">
+            <div class="h-tier"><i class="ph ph-sparkle"></i><h4>Silver</h4><p>Complimentary shipping and a birthday gift.</p></div>
+            <div class="h-tier"><i class="ph ph-diamond"></i><h4>Gold</h4><p>1.5&times; points and early access to new scents.</p></div>
+            <div class="h-tier"><i class="ph-fill ph-crown"></i><h4>Platinum</h4><p>Complimentary engraving and a private concierge.</p></div>
+          </div>
+          <a href="services.html#vip" class="btn btn-primary">Explore Tiers &amp; Benefits</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Orelle</h3>
+          <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
+          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-x-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-pinterest-logo"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=unisex">Unisex</a></li>
+            <li><a href="scent-finder.html">Scent Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#shipping-returns">Shipping & Returns</a></li>
+            <li><a href="services.html#vip">VIP Rewards</a></li>
+            <li><a href="about.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-secondary text-sm" style="margin-bottom: var(--space-4);">Subscribe for exclusive access.</p>
+          <!-- Mailchimp embed code comment placeholder -->
+          <form class="flex" style="gap: var(--space-2);">
+            <input type="email" placeholder="Email Address" class="form-control" style="height: 40px;">
+            <button class="btn btn-outline" style="height: 40px; padding: 0 var(--space-4);"><i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Orelle is a demo brand. Products, prices, ratings, points, and orders are placeholder data. Fragrance safety information is placeholder text.</p>
+        <p>&copy; 2026 Orelle Luxury Fragrances. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/atlas.js"></script>
+  <!-- GA_TAG comment placeholder -->
+</body>
+</html>

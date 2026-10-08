@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Studio | Orelle</title>
+  <meta name="description" content="Curate discovery sets or design custom packaging for a bespoke gifting experience.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Orelle</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="shop.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html?category=women" class="dropdown-item">Women</a>
+            <a href="shop.html?category=men" class="dropdown-item">Men</a>
+            <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+            <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+        <div class="nav-item">
+          <a href="studio.html" class="nav-link active" aria-haspopup="true" aria-expanded="false">Studio</a>
+          <div class="dropdown-menu">
+            <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+            <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#story" class="dropdown-item">Our Story</a>
+            <a href="about.html#contact" class="dropdown-item">Contact</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="cart-toggle" aria-label="Cart drawer">
+          <i class="ph ph-bag"></i>
+          <div class="cart-count" style="display:none;">0</div>
+        </a>
+        <a href="login.html" class="btn btn-primary login-btn" style="height: 36px; padding: 0 16px;">Login</a>
+        <button class="hamburger" aria-label="Open mobile menu"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="padding: var(--space-4); text-align: right; border-bottom: 1px solid var(--border-color);">
+      <button class="hamburger" aria-label="Close mobile menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="shop.html?category=women" class="dropdown-item">Women</a>
+          <a href="shop.html?category=men" class="dropdown-item">Men</a>
+          <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+          <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+      <div class="nav-item">
+        <a href="studio.html" class="nav-link active">Studio</a>
+        <div class="dropdown-menu">
+          <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+          <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html#story" class="dropdown-item">Our Story</a>
+          <a href="about.html#contact" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      <div class="nav-item" style="margin-top: var(--space-6); padding: 0 var(--space-4);">
+        <a href="login.html" class="btn btn-primary login-btn" style="width: 100%;">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body"></div>
+    <div class="cart-footer"></div>
+  </div>
+
+  <main style="padding-top: var(--header-height);">
+    <div class="container section">
+      <div class="section-header">
+        <h1>The Studio</h1>
+        <p>Curate. Customize. Create.</p>
+      </div>
+
+      <!-- Tabs -->
+      <div class="flex justify-center gap-4" style="margin-bottom: var(--space-12);" role="tablist">
+        <button class="btn btn-text studio-tab-btn active" data-target="discovery" role="tab" style="font-size: 1.25rem;">Discovery Sets</button>
+        <button class="btn btn-text studio-tab-btn" data-target="packaging" role="tab" style="font-size: 1.25rem;">Custom Packaging</button>
+      </div>
+
+      <!-- Discovery Sets Panel -->
+      <div id="discovery" class="studio-panel active animate-fade-in" role="tabpanel">
+        <div class="grid studio-split">
+          
+          <div id="dsBuilder">
+            <h2 style="margin-bottom: var(--space-4);">Build Your Set</h2>
+            <p class="text-secondary" style="margin-bottom: var(--space-6);">
+              Select your preferred samples. The cost of your discovery set will be credited toward any full-size purchase within 30 days.
+            </p>
+            
+            <div style="margin-bottom: var(--space-6);">
+              <h4 style="margin-bottom: var(--space-2);">1. Choose Size</h4>
+              <div class="flex gap-4">
+                <label class="btn btn-outline" style="flex:1; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative;">
+                  <input type="radio" name="setSize" value="3" checked style="position: absolute; opacity: 0;">
+                  3 Samples
+                </label>
+                <label class="btn btn-outline" style="flex:1; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative;">
+                  <input type="radio" name="setSize" value="5" style="position: absolute; opacity: 0;">
+                  5 Samples
+                </label>
+                <label class="btn btn-outline" style="flex:1; cursor: pointer; display: flex; align-items: center; justify-content: center; position: relative;">
+                  <input type="radio" name="setSize" value="8" style="position: absolute; opacity: 0;">
+                  8 Samples
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-6);">
+              <div class="flex justify-between items-center" style="margin-bottom: var(--space-2);">
+                <h4>2. Select Fragrances</h4>
+                <div id="dsCounter" class="text-sm text-accent tabular">0 / 3 selected</div>
+              </div>
+              <div id="samplePickerGrid" class="grid" style="grid-template-columns: repeat(3, 1fr); gap: var(--space-2);">
+                <!-- Injected by studio.js -->
+              </div>
+            </div>
+            
+            <div style="border-top: 1px solid var(--border-color); padding-top: var(--space-6); display: flex; justify-content: space-between; align-items: center;">
+              <div class="tabular text-accent" style="font-size: 2rem;" id="dsPrice">$65.00</div>
+              <button class="btn btn-primary" id="dsAddToCart" disabled>Add Set to Cart</button>
+            </div>
+          </div>
+
+          <div>
+            <div class="curated-panel">
+              <span class="curated-eyebrow">House Selections</span>
+              <h3>Curated Sets</h3>
+              <p class="text-secondary">Prefer a pre-selected journey? Explore our house-curated sets.</p>
+
+              <div class="curated-list">
+                <div class="curated-set">
+                  <div class="curated-icon" aria-hidden="true"><i class="ph ph-tree"></i></div>
+                  <div class="curated-info">
+                    <h4>Woody Trio</h4>
+                    <div class="text-sm text-secondary">3 x 2ml Samples</div>
+                  </div>
+                  <div class="curated-buy">
+                    <div class="curated-price tabular">$65.00</div>
+                    <button class="btn btn-outline" onclick="window.Cart.addItem({id:'ds2', name:'Woody Trio', price: 65, image:'https://images.unsplash.com/photo-1615529328331-f8917597711f?auto=format&fit=crop&q=80&w=600'}, 1, {type:'discovery'})">Add</button>
+                  </div>
+                </div>
+                <div class="curated-set">
+                  <div class="curated-icon" aria-hidden="true"><i class="ph ph-flower-lotus"></i></div>
+                  <div class="curated-info">
+                    <h4>Floral Five</h4>
+                    <div class="text-sm text-secondary">5 x 2ml Samples</div>
+                  </div>
+                  <div class="curated-buy">
+                    <div class="curated-price tabular">$95.00</div>
+                    <button class="btn btn-outline" onclick="window.Cart.addItem({id:'ds3', name:'Floral Five', price: 95, image:'https://images.unsplash.com/photo-1563170351-be82bc888aa4?auto=format&fit=crop&q=80&w=600'}, 1, {type:'discovery'})">Add</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+
+      <!-- Packaging Panel -->
+      <div id="packaging" class="studio-panel" role="tabpanel" style="display: none;">
+        <div class="grid studio-split" id="packConfigurator">
+          
+          <!-- Live Preview -->
+          <div style="position: sticky; top: 120px; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius); padding: var(--space-8); display: flex; align-items: center; justify-content: center; min-height: 500px;">
+            <svg width="300" height="300" viewBox="0 0 300 300">
+              <!-- Box -->
+              <rect id="previewBox" x="25" y="25" width="250" height="250" rx="8" fill="#111" stroke="#333" stroke-width="2" style="transition: fill 0.3s;"/>
+              
+              <!-- Ribbon Vertical -->
+              <rect id="previewRibbon" x="135" y="25" width="30" height="250" fill="#000" style="transition: fill 0.3s;"/>
+              <!-- Ribbon Horizontal -->
+              <rect id="previewRibbonH" x="25" y="135" width="250" height="30" fill="#000" style="transition: fill 0.3s;"/>
+              
+              <!-- Engraving Plate -->
+              <rect x="75" y="100" width="150" height="100" rx="4" fill="#1a1a1a" stroke="#d4af37" stroke-width="1"/>
+              <text id="previewText" x="150" y="155" fill="#d4af37" text-anchor="middle" font-family="Cormorant Garamond" font-size="20" letter-spacing="2"></text>
+            </svg>
+          </div>
+
+          <!-- Controls -->
+          <div>
+            <h2 style="margin-bottom: var(--space-4);">The Art of Gifting</h2>
+            <p class="text-secondary" style="margin-bottom: var(--space-8);">
+              Personalize your unboxing experience.
+            </p>
+
+            <div style="margin-bottom: var(--space-6);">
+              <h4 style="margin-bottom: var(--space-2);">Box Style</h4>
+              <div class="flex gap-4">
+                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                  <input type="radio" name="boxStyle" value="box-classic" checked style="position: absolute; opacity: 0;">
+                  Classic Noir
+                </label>
+                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                  <input type="radio" name="boxStyle" value="box-velvet" style="position: absolute; opacity: 0;">
+                  Velvet Obsidian
+                </label>
+                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                  <input type="radio" name="boxStyle" value="box-gold" style="position: absolute; opacity: 0;">
+                  Champagne Gold
+                </label>
+              </div>
+            </div>
+
+            <div style="margin-bottom: var(--space-6);">
+              <h4 style="margin-bottom: var(--space-2);">Ribbon</h4>
+              <div class="flex gap-4">
+                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                  <input type="radio" name="ribbon" value="ribbon-silk" checked style="position: absolute; opacity: 0;">
+                  Black Silk
+                </label>
+                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                  <input type="radio" name="ribbon" value="ribbon-gold" style="position: absolute; opacity: 0;">
+                  Gold Satin
+                </label>
+                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                  <input type="radio" name="ribbon" value="ribbon-none" style="position: absolute; opacity: 0;">
+                  None
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: var(--space-6);">
+              <div class="flex justify-between items-center" style="margin-bottom: var(--space-2);">
+                <h4 style="margin: 0;">Engraving</h4>
+                <div id="engravingCounter" class="text-sm text-secondary">0/15</div>
+              </div>
+              <input type="text" id="engravingInput" class="form-control" placeholder="E.g. J.D. 2026" maxlength="15">
+              <p class="text-xs text-muted" style="margin-top: 4px;">Alphanumeric and '&' only.</p>
+            </div>
+
+            <div class="form-group" style="margin-bottom: var(--space-8);">
+              <h4 style="margin-bottom: var(--space-2);">Gift Message (Optional)</h4>
+              <textarea class="form-control" placeholder="A handwritten note included with your order..."></textarea>
+            </div>
+
+            <div style="border-top: 1px solid var(--border-color); padding-top: var(--space-6); display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <div class="text-sm text-secondary">Add-on Price</div>
+                <div class="tabular text-accent" style="font-size: 1.5rem;" id="packAddOnPrice">Complimentary</div>
+              </div>
+              <button class="btn btn-primary" id="saveDesignBtn">Save Design</button>
+            </div>
+            <p class="text-sm text-secondary" style="margin-top: var(--space-4); text-align: right;">Designs are saved to your dashboard for future orders.</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Orelle</h3>
+          <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
+          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-x-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-pinterest-logo"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=unisex">Unisex</a></li>
+            <li><a href="scent-finder.html">Scent Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#shipping-returns">Shipping & Returns</a></li>
+            <li><a href="services.html#vip">VIP Rewards</a></li>
+            <li><a href="about.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-secondary text-sm" style="margin-bottom: var(--space-4);">Subscribe for exclusive access.</p>
+          <!-- Mailchimp embed code comment placeholder -->
+          <form class="flex" style="gap: var(--space-2);">
+            <input type="email" placeholder="Email Address" class="form-control" style="height: 40px;">
+            <button class="btn btn-outline" style="height: 40px; padding: 0 var(--space-4);"><i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Orelle is a demo brand. Products, prices, ratings, points, and orders are placeholder data. Fragrance safety information is placeholder text.</p>
+        <p>&copy; 2026 Orelle Luxury Fragrances. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/studio.js"></script>
+  <script>
+    // Tab switching fix for inline styles if needed
+    document.querySelectorAll('.studio-tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.studio-panel').forEach(p => p.style.display = 'none');
+        document.getElementById(btn.dataset.target).style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>

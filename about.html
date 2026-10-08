@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | Orelle</title>
+  <meta name="description" content="Learn about the heritage, craftsmanship, and contact information for Orelle Luxury Fragrances.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Orelle</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="shop.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html?category=women" class="dropdown-item">Women</a>
+            <a href="shop.html?category=men" class="dropdown-item">Men</a>
+            <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+            <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+        <div class="nav-item">
+          <a href="studio.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Studio</a>
+          <div class="dropdown-menu">
+            <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+            <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link active" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#story" class="dropdown-item">Our Story</a>
+            <a href="about.html#contact" class="dropdown-item">Contact</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="cart-toggle" aria-label="Cart drawer">
+          <i class="ph ph-bag"></i>
+          <div class="cart-count" style="display:none;">0</div>
+        </a>
+        <a href="login.html" class="btn btn-primary login-btn" style="height: 36px; padding: 0 16px;">Login</a>
+        <button class="hamburger" aria-label="Open mobile menu"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="padding: var(--space-4); text-align: right; border-bottom: 1px solid var(--border-color);">
+      <button class="hamburger" aria-label="Close mobile menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="shop.html?category=women" class="dropdown-item">Women</a>
+          <a href="shop.html?category=men" class="dropdown-item">Men</a>
+          <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+          <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+      <div class="nav-item">
+        <a href="studio.html" class="nav-link">Studio</a>
+        <div class="dropdown-menu">
+          <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+          <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link active">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html#story" class="dropdown-item">Our Story</a>
+          <a href="about.html#contact" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      <div class="nav-item" style="margin-top: var(--space-6); padding: 0 var(--space-4);">
+        <a href="login.html" class="btn btn-primary login-btn" style="width: 100%;">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body"></div>
+    <div class="cart-footer"></div>
+  </div>
+
+  <main style="padding-top: var(--header-height);">
+    <!-- Story -->
+    <section id="story" class="section">
+      <div class="container grid about-story">
+        <div class="about-story-media">
+          <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&q=80&w=800" alt="Perfumer blending" style="border-radius: var(--radius); width: 100%;">
+        </div>
+        <div>
+          <h2>The Architecture of Scent</h2>
+          <p class="text-secondary" style="font-size: 1.125rem; margin-top: var(--space-6); margin-bottom: var(--space-4);">
+            Orelle was founded on a singular principle: fragrance should be structured, profound, and unapologetically bold.
+          </p>
+          <p class="text-secondary" style="margin-bottom: var(--space-4);">
+            We discard the ephemeral and the overly sweet, focusing instead on deep woods, rare resins, structured florals, and dark spices. Every bottle is an exercise in tension and release, crafted by master perfumers utilizing the finest raw materials sourced globally.
+          </p>
+          <div class="card" style="padding: var(--space-4); background-color: var(--bg-tertiary); border: none; margin-top: var(--space-6);">
+            <div class="flex items-center gap-4">
+              <i class="ph ph-seal-check" style="font-size: 2rem; color: var(--accent);"></i>
+              <div>
+                <h4 style="margin-bottom: 2px;">Authenticity & Craftsmanship</h4>
+                <div class="text-sm text-secondary">Every batch is macerated for 6 months to ensure ultimate depth.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Form -->
+    <section id="contact" class="section" style="background-color: var(--bg-secondary);">
+      <div class="container" style="max-width: 600px;">
+        <div class="section-header">
+          <h2>Contact the House</h2>
+          <p>For inquiries regarding bespoke orders, concierge services, or general support.</p>
+        </div>
+
+        <div class="card" style="padding: var(--space-8);">
+          <form id="contactForm" action="https://formspree.io/f/placeholder" method="POST" novalidate>
+            <div class="form-group">
+              <label class="form-label">Name</label>
+              <input type="text" class="form-control" name="name" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email Address</label>
+              <input type="email" class="form-control" name="email" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Subject</label>
+              <select class="form-control" name="subject" required style="appearance: none;">
+                <option value="">Select a subject...</option>
+                <option value="order">Order Support</option>
+                <option value="vip">VIP Concierge</option>
+                <option value="press">Press Inquiry</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Message</label>
+              <textarea class="form-control" name="message" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width: 100%; margin-top: var(--space-4);">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Map -->
+      <div class="container contact-map">
+        <div class="contact-map-info">
+          <span class="contact-map-eyebrow">The Flagship</span>
+          <h3>Visit the Maison</h3>
+          <ul>
+            <li><i class="ph ph-map-pin"></i><span>Place Vendôme<br>75001 Paris, France</span></li>
+            <li><i class="ph ph-clock"></i><span>Mon – Sat, 10:00 – 19:00<br>Sunday by appointment</span></li>
+            <li><i class="ph ph-envelope-simple"></i><span>concierge@orelle.example</span></li>
+          </ul>
+          <a href="https://www.google.com/maps/search/?api=1&query=Place+Vendome+Paris" target="_blank" rel="noopener" class="btn btn-outline">Get Directions</a>
+        </div>
+        <div class="contact-map-frame">
+          <iframe src="https://www.google.com/maps?q=Place+Vendome,+75001+Paris&z=16&output=embed" title="Map showing the Orelle flagship at Place Vendôme, Paris" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Orelle</h3>
+          <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
+          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-x-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-pinterest-logo"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=unisex">Unisex</a></li>
+            <li><a href="scent-finder.html">Scent Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#shipping-returns">Shipping & Returns</a></li>
+            <li><a href="services.html#vip">VIP Rewards</a></li>
+            <li><a href="about.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-secondary text-sm" style="margin-bottom: var(--space-4);">Subscribe for exclusive access.</p>
+          <!-- Mailchimp embed code comment placeholder -->
+          <form class="flex" style="gap: var(--space-2);">
+            <input type="email" placeholder="Email Address" class="form-control" style="height: 40px;">
+            <button class="btn btn-outline" style="height: 40px; padding: 0 var(--space-4);"><i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Orelle is a demo brand. Products, prices, ratings, points, and orders are placeholder data. Fragrance safety information is placeholder text.</p>
+        <p>&copy; 2026 Orelle Luxury Fragrances. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/forms.js"></script>
+</body>
+</html>

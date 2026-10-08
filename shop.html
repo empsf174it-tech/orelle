@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Collection | Orelle Luxury Fragrances</title>
+  <meta name="description" content="Explore Orelle's full catalog of luxury perfumes and extracts. Filter by scent family, notes, and concentration.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Orelle</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="shop.html" class="nav-link active" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html?category=women" class="dropdown-item">Women</a>
+            <a href="shop.html?category=men" class="dropdown-item">Men</a>
+            <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+            <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+        <div class="nav-item">
+          <a href="studio.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Studio</a>
+          <div class="dropdown-menu">
+            <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+            <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#story" class="dropdown-item">Our Story</a>
+            <a href="about.html#contact" class="dropdown-item">Contact</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="cart-toggle" aria-label="Cart drawer">
+          <i class="ph ph-bag"></i>
+          <div class="cart-count" style="display:none;">0</div>
+        </a>
+        <a href="login.html" class="btn btn-primary login-btn" style="height: 36px; padding: 0 16px;">Login</a>
+        <button class="hamburger" aria-label="Open mobile menu"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="padding: var(--space-4); text-align: right; border-bottom: 1px solid var(--border-color);">
+      <button class="hamburger" aria-label="Close mobile menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="shop.html" class="nav-link active">Shop</a>
+        <div class="dropdown-menu">
+          <a href="shop.html?category=women" class="dropdown-item">Women</a>
+          <a href="shop.html?category=men" class="dropdown-item">Men</a>
+          <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+          <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+      <div class="nav-item">
+        <a href="studio.html" class="nav-link">Studio</a>
+        <div class="dropdown-menu">
+          <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+          <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html#story" class="dropdown-item">Our Story</a>
+          <a href="about.html#contact" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      <div class="nav-item" style="margin-top: var(--space-6); padding: 0 var(--space-4);">
+        <a href="login.html" class="btn btn-primary login-btn" style="width: 100%;">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body"></div>
+    <div class="cart-footer"></div>
+  </div>
+
+  <main style="padding-top: var(--header-height);">
+    <div class="container section">
+      <div class="section-header">
+        <h1>The Collection</h1>
+        <p>Explore our library of luxury scents.</p>
+      </div>
+      
+      <div class="grid shop-layout">
+        
+        <!-- Sidebar Filters -->
+        <aside class="filters-sidebar">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+            <h3 style="margin: 0; font-size: 1.25rem;">Filters</h3>
+            <button class="btn btn-text text-sm" onclick="window.resetFilters()">Clear</button>
+          </div>
+          
+          <div style="margin-bottom: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-2); font-size: 1rem;">Category</h4>
+            <div class="flex flex-col gap-2 filter-chips">
+              <button class="note-chip filter-chip" style="text-align: left;" data-category="all">All</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-category="women">Women</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-category="men">Men</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-category="unisex">Unisex</button>
+            </div>
+          </div>
+          
+          <div style="margin-bottom: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-2); font-size: 1rem;">Scent Family</h4>
+            <div class="flex flex-col gap-2 filter-chips">
+              <button class="note-chip filter-chip" style="text-align: left;" data-family="floral">Floral</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-family="woody">Woody</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-family="fresh/citrus">Fresh / Citrus</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-family="chypre">Chypre</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-family="amber/oriental">Amber / Oriental</button>
+              <button class="note-chip filter-chip" style="text-align: left;" data-family="gourmand">Gourmand</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Listing -->
+        <div>
+          <div class="flex justify-between items-center" style="margin-bottom: var(--space-6);">
+            <div class="text-sm text-secondary">Showing results</div>
+            <select id="sortSelect" class="form-control" style="width: auto; height: 36px; padding: 0 var(--space-2);">
+              <option value="featured">Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Top Rated</option>
+            </select>
+          </div>
+
+          <div id="shopGrid" class="grid shop-grid">
+            <!-- Injected by shop.js -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Orelle</h3>
+          <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
+          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-x-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-pinterest-logo"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=unisex">Unisex</a></li>
+            <li><a href="scent-finder.html">Scent Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#shipping-returns">Shipping & Returns</a></li>
+            <li><a href="services.html#vip">VIP Rewards</a></li>
+            <li><a href="about.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-secondary text-sm" style="margin-bottom: var(--space-4);">Subscribe for exclusive access.</p>
+          <!-- Mailchimp embed code comment placeholder -->
+          <form class="flex" style="gap: var(--space-2);">
+            <input type="email" placeholder="Email Address" class="form-control" style="height: 40px;">
+            <button class="btn btn-outline" style="height: 40px; padding: 0 var(--space-4);"><i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Orelle is a demo brand. Products, prices, ratings, points, and orders are placeholder data. Fragrance safety information is placeholder text.</p>
+        <p>&copy; 2026 Orelle Luxury Fragrances. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/shop.js"></script>
+</body>
+</html>

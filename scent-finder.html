@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Scent Note Pyramid Finder | Orelle</title>
+  <meta name="description" content="Find your signature scent using our interactive note pyramid algorithm.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Orelle</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="shop.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html?category=women" class="dropdown-item">Women</a>
+            <a href="shop.html?category=men" class="dropdown-item">Men</a>
+            <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+            <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="scent-finder.html" class="nav-link active">Scent Finder</a></div>
+        <div class="nav-item">
+          <a href="studio.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Studio</a>
+          <div class="dropdown-menu">
+            <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+            <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#story" class="dropdown-item">Our Story</a>
+            <a href="about.html#contact" class="dropdown-item">Contact</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="cart-toggle" aria-label="Cart drawer">
+          <i class="ph ph-bag"></i>
+          <div class="cart-count" style="display:none;">0</div>
+        </a>
+        <a href="login.html" class="btn btn-primary login-btn" style="height: 36px; padding: 0 16px;">Login</a>
+        <button class="hamburger" aria-label="Open mobile menu"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="padding: var(--space-4); text-align: right; border-bottom: 1px solid var(--border-color);">
+      <button class="hamburger" aria-label="Close mobile menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="shop.html?category=women" class="dropdown-item">Women</a>
+          <a href="shop.html?category=men" class="dropdown-item">Men</a>
+          <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+          <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="scent-finder.html" class="nav-link active">Scent Finder</a></div>
+      <div class="nav-item">
+        <a href="studio.html" class="nav-link">Studio</a>
+        <div class="dropdown-menu">
+          <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+          <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="services.html" class="nav-link">Services</a></div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html#story" class="dropdown-item">Our Story</a>
+          <a href="about.html#contact" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      <div class="nav-item" style="margin-top: var(--space-6); padding: 0 var(--space-4);">
+        <a href="login.html" class="btn btn-primary login-btn" style="width: 100%;">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body"></div>
+    <div class="cart-footer"></div>
+  </div>
+
+  <main style="padding-top: var(--header-height);">
+    <div class="container section">
+      <div class="section-header">
+        <h1>Scent Note Finder</h1>
+        <p>Select the notes that resonate with you to reveal your perfect match.</p>
+        <p class="text-sm text-secondary" style="margin-top: var(--space-4);">Weighting rule: Base Notes (40%) • Heart Notes (35%) • Top Notes (25%)</p>
+      </div>
+
+      <div id="scentFinderApp" class="grid finder-layout">
+        
+        <!-- Controls -->
+        <div>
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-4);">
+            <h3 style="margin: 0;">Build Your Profile</h3>
+            <button class="btn btn-text text-sm" id="resetFinder">Reset Selection</button>
+          </div>
+
+          <div class="card" style="padding: var(--space-6); margin-bottom: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-2); color: var(--accent);">Top Notes (25%)</h4>
+            <p class="text-sm text-secondary" style="margin-bottom: var(--space-4);">The first impression. Bright, volatile, and sharp.</p>
+            <div id="topNotesContainer" class="flex flex-wrap gap-2" role="group" aria-label="Top Notes"></div>
+          </div>
+
+          <div class="card" style="padding: var(--space-6); margin-bottom: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-2); color: var(--accent);">Heart Notes (35%)</h4>
+            <p class="text-sm text-secondary" style="margin-bottom: var(--space-4);">The core identity. Rich, robust, and enduring.</p>
+            <div id="heartNotesContainer" class="flex flex-wrap gap-2" role="group" aria-label="Heart Notes"></div>
+          </div>
+
+          <div class="card" style="padding: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-2); color: var(--accent);">Base Notes (40%)</h4>
+            <p class="text-sm text-secondary" style="margin-bottom: var(--space-4);">The memory. Deep, resonant, and fixing.</p>
+            <div id="baseNotesContainer" class="flex flex-wrap gap-2" role="group" aria-label="Base Notes"></div>
+          </div>
+        </div>
+
+        <!-- Visualization & Results -->
+        <div class="finder-results">
+          
+          <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: var(--radius); padding: var(--space-6); text-align: center; margin-bottom: var(--space-6);">
+            <h4 style="margin-bottom: var(--space-4);">Your Architectural Pyramid</h4>
+            <svg width="100%" height="250" viewBox="0 0 400 300" id="pyramidSvg" role="img" aria-label="Interactive Note Pyramid">
+              <polygon id="pyramidTop" points="200,20 300,100 100,100" fill="var(--bg-tertiary)" stroke="var(--border-color)" style="transition: fill 0.3s;" />
+              <polygon id="pyramidHeart" points="100,100 300,100 350,180 50,180" fill="var(--bg-tertiary)" stroke="var(--border-color)" style="transition: fill 0.3s;"/>
+              <polygon id="pyramidBase" points="50,180 350,180 400,280 0,280" fill="var(--bg-tertiary)" stroke="var(--border-color)" style="transition: fill 0.3s;"/>
+              <text x="200" y="75" fill="var(--text-primary)" text-anchor="middle" font-family="Outfit" font-size="14">TOP</text>
+              <text x="200" y="145" fill="var(--text-primary)" text-anchor="middle" font-family="Outfit" font-size="14">HEART</text>
+              <text x="200" y="235" fill="var(--text-primary)" text-anchor="middle" font-family="Outfit" font-size="14">BASE</text>
+            </svg>
+          </div>
+
+          <div>
+            <h3 style="margin-bottom: var(--space-4);">Match Results</h3>
+            <div id="finderResults">
+              <div class="text-center text-muted" style="padding: var(--space-8);">Select notes above to see matches.</div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Orelle</h3>
+          <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
+          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-x-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-pinterest-logo"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=unisex">Unisex</a></li>
+            <li><a href="scent-finder.html">Scent Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#shipping-returns">Shipping & Returns</a></li>
+            <li><a href="services.html#vip">VIP Rewards</a></li>
+            <li><a href="about.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-secondary text-sm" style="margin-bottom: var(--space-4);">Subscribe for exclusive access.</p>
+          <!-- Mailchimp embed code comment placeholder -->
+          <form class="flex" style="gap: var(--space-2);">
+            <input type="email" placeholder="Email Address" class="form-control" style="height: 40px;">
+            <button class="btn btn-outline" style="height: 40px; padding: 0 var(--space-4);"><i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Orelle is a demo brand. Products, prices, ratings, points, and orders are placeholder data. Fragrance safety information is placeholder text.</p>
+        <p>&copy; 2026 Orelle Luxury Fragrances. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/finder.js"></script>
+</body>
+</html>

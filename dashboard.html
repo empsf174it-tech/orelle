@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Dashboard | Orelle VIP</title>
+  <meta name="description" content="Manage your Orelle VIP account, rewards, and order history.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body"></div>
+    <div class="cart-footer"></div>
+  </div>
+
+  <!-- Dashboard Top Bar -->
+  <header class="dash-topbar">
+    <div class="container dash-topbar-inner">
+      <a href="index.html" class="logo">Orelle</a>
+      <div class="dash-topbar-actions">
+        <a href="index.html" class="dash-back"><i class="ph ph-arrow-left"></i> Back to store</a>
+        <button class="dash-menu-btn" aria-label="Open account menu" aria-expanded="false" aria-controls="dashSidebar"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="container section" id="dashboardApp">
+      <!-- Injected by dashboard.js -->
+      <div class="text-center" style="padding: 100px 0;"><i class="ph ph-spinner ph-spin" style="font-size: 2rem;"></i> Loading Dashboard...</div>
+    </div>
+  </main>
+
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script>
+    // No login required: fall back to a demo guest profile
+    window.Auth.ensureGuest();
+  </script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/dashboard.js"></script>
+</body>
+</html>

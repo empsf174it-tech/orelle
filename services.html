@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Services & VIP Rewards | Orelle</title>
+  <meta name="description" content="Discover Orelle's boutique services, VIP loyalty rewards program, and shipping information.">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <script src="https://unpkg.com/@phosphor-icons/web"></script>
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="index.html" class="logo">Orelle</a>
+      <nav class="nav-links" aria-label="Primary Navigation">
+        <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+        <div class="nav-item">
+          <a href="shop.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Shop</a>
+          <div class="dropdown-menu">
+            <a href="shop.html?category=women" class="dropdown-item">Women</a>
+            <a href="shop.html?category=men" class="dropdown-item">Men</a>
+            <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+            <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+        <div class="nav-item">
+          <a href="studio.html" class="nav-link" aria-haspopup="true" aria-expanded="false">Studio</a>
+          <div class="dropdown-menu">
+            <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+            <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="services.html" class="nav-link active">Services</a></div>
+        <div class="nav-item">
+          <a href="about.html" class="nav-link" aria-haspopup="true" aria-expanded="false">About</a>
+          <div class="dropdown-menu">
+            <a href="about.html#story" class="dropdown-item">Our Story</a>
+            <a href="about.html#contact" class="dropdown-item">Contact</a>
+          </div>
+        </div>
+        <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      </nav>
+      <div class="nav-actions">
+        <a href="#" class="cart-toggle" aria-label="Cart drawer">
+          <i class="ph ph-bag"></i>
+          <div class="cart-count" style="display:none;">0</div>
+        </a>
+        <a href="login.html" class="btn btn-primary login-btn" style="height: 36px; padding: 0 16px;">Login</a>
+        <button class="hamburger" aria-label="Open mobile menu"><i class="ph ph-list"></i></button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <div class="mobile-drawer">
+    <div style="padding: var(--space-4); text-align: right; border-bottom: 1px solid var(--border-color);">
+      <button class="hamburger" aria-label="Close mobile menu"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="nav-links">
+      <div class="nav-item"><a href="index.html" class="nav-link">Home</a></div>
+      <div class="nav-item">
+        <a href="shop.html" class="nav-link">Shop</a>
+        <div class="dropdown-menu">
+          <a href="shop.html?category=women" class="dropdown-item">Women</a>
+          <a href="shop.html?category=men" class="dropdown-item">Men</a>
+          <a href="shop.html?category=unisex" class="dropdown-item">Unisex</a>
+          <a href="shop.html?category=gift-sets" class="dropdown-item">Gift Sets</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="scent-finder.html" class="nav-link">Scent Finder</a></div>
+      <div class="nav-item">
+        <a href="studio.html" class="nav-link">Studio</a>
+        <div class="dropdown-menu">
+          <a href="studio.html#discovery" class="dropdown-item">Discovery Sets</a>
+          <a href="studio.html#packaging" class="dropdown-item">Custom Packaging</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="services.html" class="nav-link active">Services</a></div>
+      <div class="nav-item">
+        <a href="about.html" class="nav-link">About</a>
+        <div class="dropdown-menu">
+          <a href="about.html#story" class="dropdown-item">Our Story</a>
+          <a href="about.html#contact" class="dropdown-item">Contact</a>
+        </div>
+      </div>
+      <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
+      <div class="nav-item" style="margin-top: var(--space-6); padding: 0 var(--space-4);">
+        <a href="login.html" class="btn btn-primary login-btn" style="width: 100%;">Login</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cart Drawer -->
+  <div class="cart-drawer">
+    <div class="cart-header">
+      <h3>Your Bag</h3>
+      <button class="close-cart"><i class="ph ph-x"></i></button>
+    </div>
+    <div class="cart-body"></div>
+    <div class="cart-footer"></div>
+  </div>
+
+  <main style="padding-top: var(--header-height);">
+    
+    <!-- Hero -->
+    <section class="section" style="background-color: var(--bg-secondary); text-align: center;">
+      <div class="container">
+        <h1 style="margin-bottom: var(--space-4);">Boutique Services</h1>
+        <p class="text-secondary" style="max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
+          The Orelle experience extends beyond the scent. We offer an array of complimentary services designed for the discerning client.
+        </p>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="section">
+      <div class="container grid cards-3" style="gap: var(--space-8);">
+        <div class="card" style="padding: var(--space-8); text-align: center;">
+          <i class="ph ph-gift" style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-4);"></i>
+          <h3 style="margin-bottom: var(--space-4);">Gifting & Engraving</h3>
+          <p class="text-secondary">Every full-size order includes complimentary custom engraving and our signature structural gift wrapping.</p>
+        </div>
+        <div class="card" style="padding: var(--space-8); text-align: center;">
+          <i class="ph ph-flask" style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-4);"></i>
+          <h3 style="margin-bottom: var(--space-4);">Complimentary Samples</h3>
+          <p class="text-secondary">All full-size orders include two complimentary 2ml samples, allowing you to experience the scent before opening the bottle.</p>
+        </div>
+        <div class="card" style="padding: var(--space-8); text-align: center;">
+          <i class="ph ph-chat-circle" style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-4);"></i>
+          <h3 style="margin-bottom: var(--space-4);">Scent Consultation</h3>
+          <p class="text-secondary">Schedule a virtual consultation with an Orelle specialist to discover your signature architectural scent.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- VIP Rewards -->
+    <section id="vip" class="section" style="background-color: var(--bg-tertiary);">
+      <div class="container">
+        <div class="section-header">
+          <i class="ph-fill ph-crown" style="font-size: 3rem; color: var(--accent); margin-bottom: var(--space-4);"></i>
+          <h2>VIP Rewards</h2>
+          <p>Join the inner circle. Earn points. Unlock privileges.</p>
+        </div>
+
+        <div style="background-color: var(--bg-secondary); padding: var(--space-8); border-radius: var(--radius); margin-bottom: var(--space-12); text-align: center;">
+          <h3 style="margin-bottom: var(--space-4);">How Points Work</h3>
+          <div class="grid" style="grid-template-columns: 1fr 1fr 1fr; gap: var(--space-6); text-align: left;">
+            <div>
+              <div class="text-accent" style="font-size: 1.5rem; margin-bottom: var(--space-2);">Earn</div>
+              <p class="text-sm text-secondary">Earn 1 to 2 points for every $1 spent, depending on your tier.</p>
+            </div>
+            <div>
+              <div class="text-accent" style="font-size: 1.5rem; margin-bottom: var(--space-2);">Bonus</div>
+              <p class="text-sm text-secondary">Receive 200 points instantly upon creating an account.</p>
+            </div>
+            <div>
+              <div class="text-accent" style="font-size: 1.5rem; margin-bottom: var(--space-2);">Redeem</div>
+              <p class="text-sm text-secondary">Exchange points for discounts, exclusive miniatures, or complimentary services.</p>
+            </div>
+          </div>
+          <div style="margin-top: var(--space-8);">
+            <a href="register.html" class="btn btn-primary">Join Now</a>
+          </div>
+        </div>
+
+        <h3 class="text-center" style="margin-bottom: var(--space-8);">Tier Status</h3>
+        <div class="grid cards-3" style="gap: var(--space-6);">
+          <!-- Silver -->
+          <div class="card" style="padding: var(--space-6); border-top: 4px solid var(--text-secondary);">
+            <h3 style="margin-bottom: var(--space-2);">Silver</h3>
+            <div class="text-sm text-secondary" style="margin-bottom: var(--space-6);">0+ Points</div>
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: 0.875rem;">
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>1 Point per $1 spent</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Complimentary standard shipping</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Birthday gift (500 pts)</li>
+            </ul>
+          </div>
+          <!-- Gold -->
+          <div class="card" style="padding: var(--space-6); border-top: 4px solid var(--accent);">
+            <h3 style="margin-bottom: var(--space-2);">Gold</h3>
+            <div class="text-sm text-secondary" style="margin-bottom: var(--space-6);">1,000+ Points</div>
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: 0.875rem;">
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>1.5 Points per $1 spent</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Expedited shipping</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Early access to new scents</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Birthday gift (1000 pts)</li>
+            </ul>
+          </div>
+          <!-- Platinum -->
+          <div class="card" style="padding: var(--space-6); border-top: 4px solid #fff;">
+            <h3 style="margin-bottom: var(--space-2);">Platinum</h3>
+            <div class="text-sm text-secondary" style="margin-bottom: var(--space-6);">3,000+ Points</div>
+            <ul style="display: flex; flex-direction: column; gap: var(--space-3); font-size: 0.875rem;">
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>2 Points per $1 spent</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Complimentary engraving</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Private concierge</li>
+              <li><i class="ph-fill ph-check text-accent" style="margin-right: 8px;"></i>Exclusive masterclass invitations</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shipping & Returns -->
+    <section id="shipping-returns" class="section">
+      <div class="container" style="max-width: 800px;">
+        <div class="section-header">
+          <h2>Shipping & Returns</h2>
+          <p>Policies crafted for a seamless experience.</p>
+        </div>
+
+        <div style="margin-bottom: var(--space-8);">
+          <h3 style="margin-bottom: var(--space-4);">Shipping Policy</h3>
+          <p class="text-secondary" style="margin-bottom: var(--space-4);">
+            Complimentary standard shipping is provided on all orders within the contiguous United States. Expedited shipping is available at checkout.
+          </p>
+          <div class="card" style="padding: var(--space-4); background-color: var(--bg-tertiary); border: none;">
+            <div style="display: flex; gap: var(--space-4); align-items: flex-start;">
+              <i class="ph-fill ph-warning-circle text-accent" style="font-size: 1.5rem;"></i>
+              <div>
+                <h4 style="margin-bottom: 4px; font-size: 1rem;">Fragrance Shipping Restrictions</h4>
+                <p class="text-sm text-secondary">Due to alcohol content, fragrances are considered hazardous materials and must be shipped via ground transport. We cannot ship to P.O. Boxes or international destinations at this time.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h3 style="margin-bottom: var(--space-4);">Returns & Exchanges</h3>
+          <p class="text-secondary" style="margin-bottom: var(--space-4);">
+            We accept returns within 30 days of delivery. <strong>Items must be unopened and in their original packaging.</strong> Because every full-size bottle includes a complimentary sample, we ask that you test the sample first before breaking the seal on the full bottle.
+          </p>
+          <p class="text-secondary">
+            Custom engraved items and Discovery Sets are final sale and cannot be returned.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Orelle</h3>
+          <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
+          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
+            <i class="ph ph-instagram-logo"></i>
+            <i class="ph ph-x-logo"></i>
+            <i class="ph ph-facebook-logo"></i>
+            <i class="ph ph-pinterest-logo"></i>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer-heading">Shop</h4>
+          <ul class="footer-links">
+            <li><a href="shop.html?category=women">Women</a></li>
+            <li><a href="shop.html?category=men">Men</a></li>
+            <li><a href="shop.html?category=unisex">Unisex</a></li>
+            <li><a href="scent-finder.html">Scent Finder</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Care</h4>
+          <ul class="footer-links">
+            <li><a href="services.html#shipping-returns">Shipping & Returns</a></li>
+            <li><a href="services.html#vip">VIP Rewards</a></li>
+            <li><a href="about.html#contact">Contact Us</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Newsletter</h4>
+          <p class="text-secondary text-sm" style="margin-bottom: var(--space-4);">Subscribe for exclusive access.</p>
+          <!-- Mailchimp embed code comment placeholder -->
+          <form class="flex" style="gap: var(--space-2);">
+            <input type="email" placeholder="Email Address" class="form-control" style="height: 40px;">
+            <button class="btn btn-outline" style="height: 40px; padding: 0 var(--space-4);"><i class="ph ph-arrow-right"></i></button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-disclosure">Orelle is a demo brand. Products, prices, ratings, points, and orders are placeholder data. Fragrance safety information is placeholder text.</p>
+        <p>&copy; 2026 Orelle Luxury Fragrances. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/loyalty.js"></script>
+  <script src="assets/js/auth.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/cart.js"></script>
+</body>
+</html>
