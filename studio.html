@@ -203,8 +203,8 @@
         <div class="grid studio-split" id="packConfigurator">
           
           <!-- Live Preview -->
-          <div style="position: sticky; top: 120px; background-color: var(--bg-tertiary); border: 1px solid var(--border-color); border-radius: var(--radius); padding: var(--space-8); display: flex; align-items: center; justify-content: center; min-height: 500px;">
-            <svg width="300" height="300" viewBox="0 0 300 300">
+          <div class="pack-preview">
+            <svg viewBox="0 0 300 300" role="img" aria-label="Live packaging preview">
               <!-- Box -->
               <rect id="previewBox" x="25" y="25" width="250" height="250" rx="8" fill="#111" stroke="#333" stroke-width="2" style="transition: fill 0.3s;"/>
               
@@ -228,16 +228,16 @@
 
             <div style="margin-bottom: var(--space-6);">
               <h4 style="margin-bottom: var(--space-2);">Box Style</h4>
-              <div class="flex gap-4">
-                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+              <div class="pack-options">
+                <label class="btn btn-outline pack-option">
                   <input type="radio" name="boxStyle" value="box-classic" checked style="position: absolute; opacity: 0;">
                   Classic Noir
                 </label>
-                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                <label class="btn btn-outline pack-option">
                   <input type="radio" name="boxStyle" value="box-velvet" style="position: absolute; opacity: 0;">
                   Velvet Obsidian
                 </label>
-                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                <label class="btn btn-outline pack-option">
                   <input type="radio" name="boxStyle" value="box-gold" style="position: absolute; opacity: 0;">
                   Champagne Gold
                 </label>
@@ -246,16 +246,16 @@
 
             <div style="margin-bottom: var(--space-6);">
               <h4 style="margin-bottom: var(--space-2);">Ribbon</h4>
-              <div class="flex gap-4">
-                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+              <div class="pack-options">
+                <label class="btn btn-outline pack-option">
                   <input type="radio" name="ribbon" value="ribbon-silk" checked style="position: absolute; opacity: 0;">
                   Black Silk
                 </label>
-                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                <label class="btn btn-outline pack-option">
                   <input type="radio" name="ribbon" value="ribbon-gold" style="position: absolute; opacity: 0;">
                   Gold Satin
                 </label>
-                <label class="btn btn-outline" style="flex:1; cursor: pointer;">
+                <label class="btn btn-outline pack-option">
                   <input type="radio" name="ribbon" value="ribbon-none" style="position: absolute; opacity: 0;">
                   None
                 </label>
@@ -276,7 +276,7 @@
               <textarea class="form-control" placeholder="A handwritten note included with your order..."></textarea>
             </div>
 
-            <div style="border-top: 1px solid var(--border-color); padding-top: var(--space-6); display: flex; justify-content: space-between; align-items: center;">
+            <div class="pack-footer">
               <div>
                 <div class="text-sm text-secondary">Add-on Price</div>
                 <div class="tabular text-accent" style="font-size: 1.5rem;" id="packAddOnPrice">Complimentary</div>
@@ -295,13 +295,13 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-brand">
-          <h3>Orelle</h3>
+          <a href="index.html" class="logo footer-logo">Orelle</a>
           <p>The dark luxury of pure, architectural scent. Crafted for the bold.</p>
-          <div style="margin-top: var(--space-4); color: var(--accent); font-size: 1.25rem;" class="flex gap-4">
-            <i class="ph ph-instagram-logo"></i>
-            <i class="ph ph-x-logo"></i>
-            <i class="ph ph-facebook-logo"></i>
-            <i class="ph ph-pinterest-logo"></i>
+          <div class="footer-social">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Instagram"><i class="ph ph-instagram-logo"></i></a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><i class="ph ph-x-logo"></i></a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><i class="ph ph-facebook-logo"></i></a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Pinterest"><i class="ph ph-pinterest-logo"></i></a>
           </div>
         </div>
         <div>
@@ -344,14 +344,5 @@
   <script src="assets/js/main.js"></script>
   <script src="assets/js/cart.js"></script>
   <script src="assets/js/studio.js"></script>
-  <script>
-    // Tab switching fix for inline styles if needed
-    document.querySelectorAll('.studio-tab-btn').forEach(btn => {
-      btn.addEventListener('click', () => {
-        document.querySelectorAll('.studio-panel').forEach(p => p.style.display = 'none');
-        document.getElementById(btn.dataset.target).style.display = 'block';
-      });
-    });
-  </script>
 </body>
 </html>

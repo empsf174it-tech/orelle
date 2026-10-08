@@ -6,25 +6,39 @@ document.addEventListener('DOMContentLoaded', () => {
 
   if(tabs.length === 0) return;
 
+  function showPanel(target) {
+    const tab = document.querySelector(`.studio-tab-btn[data-target="${target}"]`);
+    const panel = document.getElementById(target);
+    if (!tab || !panel) return false;
+
+    tabs.forEach(t => t.classList.remove('active'));
+    panels.forEach(p => { p.classList.remove('active'); p.style.display = 'none'; });
+
+    tab.classList.add('active');
+    panel.classList.add('active');
+    panel.style.display = 'block';
+    return true;
+  }
+
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      panels.forEach(p => p.classList.remove('active'));
-      
-      tab.classList.add('active');
-      document.getElementById(tab.dataset.target).classList.add('active');
-      
+      showPanel(tab.dataset.target);
       // Update hash for deep linking without scroll jump
       history.replaceState(null, null, `#${tab.dataset.target}`);
     });
   });
 
-  // Handle deep link on load
-  if(window.location.hash) {
+  // Deep links (#discovery / #packaging), on load and from the nav dropdown
+  const tabBar = tabs[0].parentElement;
+  function openFromHash() {
     const target = window.location.hash.replace('#', '');
-    const tab = document.querySelector(`.studio-tab-btn[data-target="${target}"]`);
-    if(tab) tab.click();
+    if (target && showPanel(target)) {
+      const top = tabBar.getBoundingClientRect().top + window.scrollY - document.querySelector('.header').offsetHeight - 16;
+      window.scrollTo({ top, behavior: 'smooth' });
+    }
   }
+  openFromHash();
+  window.addEventListener('hashchange', openFromHash);
 
   // --- Discovery Set Builder ---
   const dsBuilder = document.getElementById('dsBuilder');

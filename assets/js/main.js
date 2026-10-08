@@ -31,6 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
   if (closeMenuBtn) closeMenuBtn.addEventListener('click', closeMenu);
   if (drawerBackdrop) drawerBackdrop.addEventListener('click', closeMenu);
 
+  // Close the drawer when a sub-link is tapped (same-page #links don't reload)
+  document.querySelectorAll('.mobile-drawer .dropdown-item').forEach(a => a.addEventListener('click', closeMenu));
+
   // Mobile Nav Accordion
   const navItems = document.querySelectorAll('.mobile-drawer .nav-item');
   navItems.forEach(item => {
