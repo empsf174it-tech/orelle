@@ -75,6 +75,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
   font-size: 16px;
 }
 
@@ -478,12 +479,24 @@ textarea.form-control {
   border-radius: 12px;
 }
 
-.nav-item:hover .dropdown-menu,
-.nav-item:focus-within .dropdown-menu {
+/* Scoped to the header so the hover/focus transform never leaks into the mobile drawer */
+.header .nav-item:hover .dropdown-menu,
+.header .nav-item:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
 }
+
+/* Desktop dropdown caret */
+.nav-caret {
+  font-size: 0.7rem;
+  margin-left: 4px;
+  vertical-align: middle;
+  display: inline-block;
+  transition: transform 0.3s var(--ease-out);
+}
+.header .nav-item:hover .nav-caret,
+.header .nav-item:focus-within .nav-caret { transform: rotate(180deg); }
 
 .dropdown-item {
   display: block;
@@ -606,10 +619,15 @@ textarea.form-control {
   display: block;
 }
 
+.mobile-drawer .nav-link i { transition: transform 0.3s var(--ease-out); }
+.mobile-drawer .nav-item.open > .nav-link { color: var(--accent); }
+.mobile-drawer .nav-item.open > .nav-link i { transform: rotate(180deg); }
+
 .mobile-drawer .dropdown-item {
-  padding: var(--space-3) 0;
+  padding: var(--space-3) var(--space-2);
   font-size: 1rem;
 }
+.mobile-drawer .dropdown-item:hover { background-color: transparent; }
 
 .drawer-backdrop {
   position: fixed;
@@ -1715,9 +1733,96 @@ h1 em, h2 em {
 
 /* About — story: image left / text right, text first when stacked */
 .about-story { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-12); align-items: center; }
-@media (max-width: 768px) {
+.about-story-media img {
+  display: block;
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: var(--radius-lg);
+}
+@media (max-width: 1024px) {
+  .about-story { gap: var(--space-8); }
+  .about-story-media img { height: 400px; }
+}
+/* Side by side through tablet (768); stacks text-first on phones */
+@media (max-width: 767px) {
   .about-story { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); }
   .about-story-media { order: 2; }
+  .about-story-media img { height: 320px; }
+}
+
+/* About — FAQ */
+.contact-faq { margin-top: var(--space-16); display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-12); align-items: start; }
+.contact-faq-intro h3 { margin-bottom: var(--space-4); }
+.contact-faq-intro p { color: var(--text-secondary); margin-bottom: var(--space-6); }
+.faq-list { display: flex; flex-direction: column; gap: var(--space-3); }
+.faq-item {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: border-color 0.3s ease;
+}
+.faq-item[open] { border-color: rgba(212,181,140,0.4); }
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex; justify-content: space-between; align-items: center; gap: var(--space-4);
+  padding: var(--space-5, 20px) var(--space-6);
+  font-weight: var(--weight-medium);
+  color: var(--text-primary);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary i { color: var(--accent); flex: 0 0 auto; transition: transform 0.3s var(--ease-out); }
+.faq-item[open] summary i { transform: rotate(45deg); }
+.faq-item summary:hover { color: var(--accent); }
+.faq-item p { padding: 0 var(--space-6) var(--space-6); color: var(--text-secondary); font-size: 0.95rem; }
+@media (max-width: 768px) {
+  .contact-faq { grid-template-columns: minmax(0, 1fr); gap: var(--space-8); margin-top: var(--space-12); }
+  .faq-item summary { padding: var(--space-4); }
+  .faq-item p { padding: 0 var(--space-4) var(--space-4); }
+}
+
+/* Social buttons (contact) */
+.contact-social { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+.contact-social a {
+  display: inline-flex; align-items: center; gap: var(--space-2);
+  height: 42px; padding: 0 var(--space-4);
+  border: 1px solid rgba(212,181,140,0.3); border-radius: var(--radius-pill);
+  color: var(--text-primary); font-size: 0.8rem; letter-spacing: 0.08em;
+  transition: var(--transition);
+}
+.contact-social a i { color: var(--accent); font-size: 1.15rem; transition: var(--transition); }
+.contact-social a:hover, .contact-social a:focus-visible {
+  background: var(--accent); border-color: var(--accent); color: var(--bg-primary);
+  transform: translateY(-2px);
+}
+.contact-social a:hover i, .contact-social a:focus-visible i { color: var(--bg-primary); }
+
+/* Back to top */
+.back-to-top {
+  position: fixed;
+  right: var(--space-6);
+  bottom: var(--space-6);
+  width: 48px; height: 48px;
+  border-radius: 50%;
+  border: 1px solid rgba(212,181,140,0.45);
+  background: rgba(18,18,18,0.85);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: var(--accent);
+  font-size: 1.25rem;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer;
+  z-index: 90;
+  opacity: 0; visibility: hidden; transform: translateY(16px);
+  transition: var(--transition);
+  box-shadow: var(--shadow-sm);
+}
+.back-to-top.show { opacity: 1; visibility: visible; transform: none; }
+.back-to-top:hover, .back-to-top:focus-visible { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+@media (max-width: 480px) {
+  .back-to-top { right: var(--space-4); bottom: var(--space-4); width: 42px; height: 42px; font-size: 1.1rem; }
 }
 
 /* About — contact map */
@@ -1919,6 +2024,14 @@ h1 em, h2 em {
 .auth-check input { width: 18px; height: 18px; margin-top: 2px; flex: 0 0 auto; accent-color: var(--accent); cursor: pointer; }
 .auth-check a, .auth-switch a { color: var(--text-primary); border-bottom: 1px solid rgba(212,181,140,0.5); transition: var(--transition); }
 .auth-check a:hover, .auth-switch a:hover { color: var(--accent); }
+
+.auth-options { display: flex; justify-content: space-between; align-items: center; gap: var(--space-4); flex-wrap: wrap; margin: calc(-1 * var(--space-2)) 0 var(--space-6); }
+.auth-options .auth-check { align-items: center; }
+.auth-options .auth-check input { margin-top: 0; }
+.auth-forgot { font-size: 0.875rem; color: var(--accent); background: none; border: none; padding: 0; cursor: pointer; font-family: inherit; }
+.auth-forgot:hover { color: var(--text-primary); text-decoration: underline; }
+.auth-notice { display: none; font-size: 0.8rem; color: var(--text-secondary); background: var(--accent-muted); border: 1px solid rgba(212,181,140,0.3); border-radius: 8px; padding: var(--space-3) var(--space-4); margin-bottom: var(--space-6); }
+.auth-notice.show { display: block; }
 
 .auth-submit { width: 100%; height: 52px; letter-spacing: 0.2em; margin-top: var(--space-2); }
 

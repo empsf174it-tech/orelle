@@ -34,6 +34,15 @@
           <div class="auth-error"></div>
         </div>
 
+        <div class="auth-options">
+          <label class="auth-check" for="loginRemember">
+            <input type="checkbox" name="remember" id="loginRemember">
+            <span>Remember me</span>
+          </label>
+          <button type="button" class="auth-forgot" id="forgotPassword">Forgot password?</button>
+        </div>
+        <div class="auth-notice" id="forgotNotice" role="status"></div>
+
         <button type="submit" class="btn btn-primary auth-submit">Login</button>
       </form>
 
@@ -64,6 +73,23 @@
       AuthUI.redirectIfLoggedIn();
 
       const form = document.getElementById('loginForm');
+      const remember = document.getElementById('loginRemember');
+      const savedEmail = localStorage.getItem('orelle_remember_email');
+      if (savedEmail) {
+        document.getElementById('loginEmail').value = savedEmail;
+        remember.checked = true;
+      }
+
+      // Demo: no reset backend, so explain instead of navigating away
+      document.getElementById('forgotPassword').addEventListener('click', () => {
+        const email = document.getElementById('loginEmail').value.trim();
+        const notice = document.getElementById('forgotNotice');
+        notice.textContent = AuthUI.EMAIL_RE.test(email)
+          ? `If an account exists for ${email}, a reset link will be sent (demo — no email is actually sent).`
+          : 'Enter your email above, then tap "Forgot password?" to receive a reset link (demo).';
+        notice.classList.add('show');
+      });
+
       form.addEventListener('submit', (e) => {
         e.preventDefault();
         AuthUI.clearErrors(form);
@@ -77,6 +103,9 @@
         if (!pass.value) { AuthUI.setError(pass, 'Please enter your password.'); isValid = false; }
 
         if (!isValid) return;
+
+        if (remember.checked) localStorage.setItem('orelle_remember_email', email.value.trim());
+        else localStorage.removeItem('orelle_remember_email');
 
         window.Auth.login(email.value.trim(), pass.value);
         AuthUI.goToDestination();

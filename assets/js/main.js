@@ -34,19 +34,50 @@ document.addEventListener('DOMContentLoaded', () => {
   // Close the drawer when a sub-link is tapped (same-page #links don't reload)
   document.querySelectorAll('.mobile-drawer .dropdown-item').forEach(a => a.addEventListener('click', closeMenu));
 
-  // Mobile Nav Accordion
+  // Desktop dropdown carets
+  document.querySelectorAll('.header .nav-item').forEach(item => {
+    const link = item.querySelector('.nav-link');
+    if (link && item.querySelector('.dropdown-menu')) {
+      link.insertAdjacentHTML('beforeend', '<i class="ph ph-caret-down nav-caret" aria-hidden="true"></i>');
+    }
+  });
+
+  // Mobile Nav Accordion (one section open at a time)
   const navItems = document.querySelectorAll('.mobile-drawer .nav-item');
   navItems.forEach(item => {
     const link = item.querySelector('.nav-link');
     const dropdown = item.querySelector('.dropdown-menu');
     if (dropdown) {
-      // Add indicator
-      link.innerHTML += ' <i class="ph ph-caret-down"></i>';
+      link.insertAdjacentHTML('beforeend', ' <i class="ph ph-caret-down" aria-hidden="true"></i>');
+      link.setAttribute('aria-expanded', 'false');
       link.addEventListener('click', (e) => {
         e.preventDefault();
-        item.classList.toggle('open');
+        const willOpen = !item.classList.contains('open');
+        navItems.forEach(other => {
+          if (other !== item && other.classList.contains('open')) {
+            other.classList.remove('open');
+            other.querySelector('.nav-link').setAttribute('aria-expanded', 'false');
+          }
+        });
+        item.classList.toggle('open', willOpen);
+        link.setAttribute('aria-expanded', String(willOpen));
       });
     }
+  });
+
+  // Back to top
+  const backToTop = document.createElement('button');
+  backToTop.type = 'button';
+  backToTop.className = 'back-to-top';
+  backToTop.setAttribute('aria-label', 'Back to top');
+  backToTop.innerHTML = '<i class="ph ph-arrow-up"></i>';
+  document.body.appendChild(backToTop);
+  const syncBackToTop = () => backToTop.classList.toggle('show', window.scrollY > 400);
+  window.addEventListener('scroll', syncBackToTop, { passive: true });
+  syncBackToTop();
+  backToTop.addEventListener('click', () => {
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    window.scrollTo({ top: 0, behavior: reduce ? 'auto' : 'smooth' });
   });
 
   // Cart Drawer

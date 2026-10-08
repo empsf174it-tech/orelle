@@ -40,6 +40,7 @@
           <div class="dropdown-menu">
             <a href="about.html#story" class="dropdown-item">Our Story</a>
             <a href="about.html#contact" class="dropdown-item">Contact</a>
+            <a href="about.html#faq" class="dropdown-item">FAQ</a>
           </div>
         </div>
         <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
@@ -86,6 +87,7 @@
         <div class="dropdown-menu">
           <a href="about.html#story" class="dropdown-item">Our Story</a>
           <a href="about.html#contact" class="dropdown-item">Contact</a>
+          <a href="about.html#faq" class="dropdown-item">FAQ</a>
         </div>
       </div>
       <div class="nav-item"><a href="dashboard.html" class="nav-link">Dashboard</a></div>
@@ -106,11 +108,21 @@
   </div>
 
   <main style="padding-top: var(--header-height);">
+    <!-- Hero -->
+    <section class="section" style="background-color: var(--bg-secondary); text-align: center;">
+      <div class="container">
+        <h1 style="margin-bottom: var(--space-4);">The House of Orelle</h1>
+        <p class="text-secondary" style="max-width: 600px; margin: 0 auto; font-size: 1.125rem;">
+          Founded on structure, depth, and restraint, Orelle composes fragrances for those who wear their presence boldly.
+        </p>
+      </div>
+    </section>
+
     <!-- Story -->
     <section id="story" class="section">
       <div class="container grid about-story">
         <div class="about-story-media">
-          <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&q=80&w=800" alt="Perfumer blending" style="border-radius: var(--radius); width: 100%;">
+          <img src="https://images.unsplash.com/photo-1557170334-a9632e77c6e4?auto=format&fit=crop&q=80&w=800" alt="Perfumer blending" loading="lazy">
         </div>
         <div>
           <h2>The Architecture of Scent</h2>
@@ -183,6 +195,44 @@
         </div>
         <div class="contact-map-frame">
           <iframe src="https://www.google.com/maps?q=Place+Vendome,+75001+Paris&z=16&output=embed" title="Map showing the Orelle flagship at Place Vendôme, Paris" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+        </div>
+      </div>
+
+      <!-- FAQ -->
+      <div id="faq" class="container contact-faq">
+        <div class="contact-faq-intro">
+          <span class="contact-map-eyebrow">FAQ</span>
+          <h3>Frequently Asked Questions</h3>
+          <p>Quick answers to what our clients ask most. For anything else, follow the house or send us an inquiry.</p>
+          <div class="contact-social">
+            <a href="https://www.instagram.com/" target="_blank" rel="noopener" aria-label="Orelle on Instagram"><i class="ph ph-instagram-logo"></i>Instagram</a>
+            <a href="https://x.com/" target="_blank" rel="noopener" aria-label="Orelle on X"><i class="ph ph-x-logo"></i>X</a>
+            <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Orelle on Facebook"><i class="ph ph-facebook-logo"></i>Facebook</a>
+            <a href="https://www.pinterest.com/" target="_blank" rel="noopener" aria-label="Orelle on Pinterest"><i class="ph ph-pinterest-logo"></i>Pinterest</a>
+            <a href="https://wa.me/" target="_blank" rel="noopener" aria-label="Message Orelle on WhatsApp"><i class="ph ph-whatsapp-logo"></i>WhatsApp</a>
+          </div>
+        </div>
+        <div class="faq-list">
+          <details class="faq-item" open>
+            <summary>How long does shipping take?<i class="ph ph-plus"></i></summary>
+            <p>Orders ship within 1–2 business days. Standard delivery takes 3–5 business days; express arrives in 1–2. Every order is gift-wrapped at no extra cost.</p>
+          </details>
+          <details class="faq-item">
+            <summary>What is your return policy?<i class="ph ph-plus"></i></summary>
+            <p>Unopened bottles may be returned within 30 days of delivery. Each full-size order includes a sample vial so you can try the scent before breaking the seal.</p>
+          </details>
+          <details class="faq-item">
+            <summary>How long do Orelle fragrances last?<i class="ph ph-plus"></i></summary>
+            <p>Our extraits are macerated for six months and typically last 8–12 hours on skin, longer on fabric. Longevity varies with skin chemistry and climate.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Can I book a private consultation?<i class="ph ph-plus"></i></summary>
+            <p>Yes. Choose "VIP Concierge" in the form above, or visit the Place Vendôme flagship by appointment for a one-to-one scent profiling session.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Do you offer custom engraving or packaging?<i class="ph ph-plus"></i></summary>
+            <p>Personalised engraving and bespoke packaging are available through the <a href="studio.html#packaging" style="color: var(--accent);">Studio</a>.</p>
+          </details>
         </div>
       </div>
     </section>
